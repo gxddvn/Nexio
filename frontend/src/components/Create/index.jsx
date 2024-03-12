@@ -39,7 +39,7 @@ const Create = () => {
     //       this[filter]().render(); // Применение выбранного фильтра
     //     });
     // };
-    console.log(selectedFile);
+    // console.log(selectedFile);
     return (
         <div className={styles.c_main}>
             <div className={styles.c_head}>
