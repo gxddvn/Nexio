@@ -1,0 +1,192 @@
+.hm_publication {
+    position: relative;
+    margin: 10px 0;
+    max-width: 500px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+
+.hmp_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: whitesmoke;
+    box-shadow: 0 2px 1px  rgba(0, 0, 0, .1);
+    border-radius: 10px 10px 0 0;
+}
+
+.hmpt_logocont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.hmptl_logo {
+    width: 25px;
+    height: 25px;
+    background-color: brown;
+    border: 2px solid rgba(0, 0, 0, .5);
+    border-radius: 50%;
+}
+
+.hmptl_name {
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    margin-left: 5px;
+}
+
+.hmpt_butt {
+    width: 25px;
+    height: 25px;
+    background-image: url("../../../img/ellipsis-horizontal-outline.svg");
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.hmpt_butt:hover {
+    background-size: 30px;
+}
+
+.hmp_middle {
+    position: relative;
+}
+
+.hmpm_photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hmpm_img {
+    max-width: 500px;
+    border-radius: 0 0 10px 10px;
+}
+
+.hmpm_butt {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.hmpmb_cont {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hmpmbc_span {
+    font-size: 16px;
+    color: black;
+}
+
+.hmpm_overcont {
+    position: relative;
+    display: flex;
+    background: whitesmoke;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 1px  rgba(0, 0, 0, .1);
+}
+
+.hmpmo_overview {
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.hmpmo_name {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.hmp_bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.hmpb_butts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: whitesmoke;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 4px  rgba(0, 0, 0, .2);
+}
+
+.hmpbb_likes {
+    width: 32px;
+    height: 32px;
+    margin: 0 5px;
+    background-image: url("../../../img/heart-outline.svg");
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.hmpbb_likes:hover {
+    background-image: url("../../../img/heart.svg");
+    background-size: 35px;
+}
+
+.hmpbb_comments {
+    width: 32px;
+    height: 32px;
+    margin: 0 5px;
+    background-image: url("../../../img//chatbubble-outline.svg");
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.hmpbb_comments:hover {
+    background-size: 35px;
+}
+
+.hmpbb_repost {
+    width: 32px;
+    height: 32px;
+    margin: 0 5px;
+    background-image: url("../../../img/arrow-redo-outline.svg");
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.hmpbb_repost:hover {
+    background-size: 35px;
+}
+
+.hmpbb_save {
+    width: 32px;
+    height: 32px;
+    margin: 0 5px;
+    background-image: url("../../../img/bookmark-outline.svg");
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.hmpbb_save:hover {
+    background-image: url("../../../img/bookmark.svg");
+    background-size: 35px;
+}

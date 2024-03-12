@@ -1,0 +1,225 @@
+.c_main {
+    background-color: #eaeaea;
+    height: auto;
+    min-height: 100vh;
+    padding: 70px 0 0 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.c_head {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    background-color: whitesmoke;
+    padding: 10px;
+    box-shadow: 0 2px 1px  rgba(0, 0, 0, .1);
+    z-index: 3;
+}
+
+.ch_cont {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* max-width: 500px; */
+}
+
+.chc_back {
+    width: 30px;
+    height: 30px;
+    background-image: url("../../img/arrow-back-outline.svg");
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.chc_back:hover {
+    background-size: 32px;
+}
+
+.chc_nav {
+    font-family: Salsa;
+    font-size: 30px;
+    color: black;
+}
+
+.chc_block {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chc_butt {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    background-image: url("../../img/ellipsis-vertical-outline.svg");
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.chc_butt:hover {
+    background-size: 32px;
+}
+
+.chc_blocknav {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.chc_avatar {
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, .3);
+    margin-right: 10px;
+}
+
+.chc_block1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.chc_name {
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+}
+
+.chc_span {
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, .7);
+}
+
+.c_middle {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.cm_blocks {
+    width: 100%;
+    max-height: 610px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+    overflow-y: scroll;
+}
+
+.cm_blockMe {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 15px;
+}
+
+.cm_blockAnother {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 15px;
+}
+
+.cmb_cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .1);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.cmb_message {
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+}
+
+.cm_buttons {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.cmb_input {
+    width: 100%;
+    border: 0;
+    border-radius: 15px;
+    background-color: whitesmoke;
+    font-family: Rubik;
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 500;
+    color: rgb(29, 29, 29);
+    padding: 15px;
+}
+
+.cmb_contbutt {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 30px;
+    right: 30px;
+}
+
+.cmb_emojibutt {
+    width: 28px;
+    height: 28px;
+    margin-right: 5px;
+    background-image: url("../../img/happy-outline.svg");
+    background-size: 28px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.cmb_emojibutt:hover {
+    background-size: 30px;
+}
+
+.cmb_sendbutt {
+    width: 28px;
+    height: 28px;
+    background-image: url("../../img/send-outline.svg");
+    background-size: 28px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.cmb_sendbutt:hover {
+    background-size: 30px;
+}

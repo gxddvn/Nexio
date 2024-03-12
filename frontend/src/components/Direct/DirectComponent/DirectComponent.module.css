@@ -1,0 +1,69 @@
+.dm_chat {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dmc_block {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dmcb_cont1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dmcb_avatar {
+    width: 50px;
+    height: 50px;
+    background-color: brown;
+    border: 2px solid rgba(0, 0, 0, .3);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.dmcb_cont {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.dmcbc_name {
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+}
+
+.dmcbc_lmessage {
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(0, 0, 0, .75);
+}
+
+.dmcb_cont2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dmcbc_data {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(0, 0, 0, .65);
+    margin-bottom: 5px;
+}
+
+.dmcbc_amountmess {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 2px 8px;
+    color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 50%;
+}

@@ -1,0 +1,183 @@
+.h_main {
+    background-color: #eaeaea;
+    padding: 50px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hm_stories {
+    padding: 20px;
+    background: whitesmoke;
+    box-shadow: 0 2px 1px  rgba(0, 0, 0, .1);
+    margin: 40px 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.hms_cont {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.hms_storie {
+    background: blueviolet;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, .5);
+    width: 50px;
+    height: 50px;
+}
+
+.hms_span {
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+} 
+
+.hm_buttlist {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    background-color: whitesmoke;
+    padding: 10px;
+    box-shadow: 0 2px 1px  rgba(0, 0, 0, .1);
+    z-index: 3;
+}
+
+.hmb_cont {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 500px;
+}
+
+.hmb_nav {
+    font-family: Salsa;
+    font-size: 30px;
+    color: black;
+}
+
+.hmb_home {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/home-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.hmb_home:hover {
+    background-size: 32px;
+}
+
+.hmb_search {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/search-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.hmb_search:hover {
+    background-size: 32px;
+}
+
+.hmb_newpost {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/add-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.hmb_newpost:hover {
+    background-size: 32px;
+}
+
+.hmb_notification {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/notifications-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.hmb_notification:hover {
+    background-size: 32px;
+}
+
+.hmb_direct {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/mail-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.hmb_direct:hover {
+    background-size: 32px;
+}
+
+.hm_buttlist2 {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    background-color: whitesmoke;
+    padding: 10px;
+    box-shadow: 0 2px 1px  rgba(0, 0, 0, .1);
+    z-index: 3;
+}
+
+.hmbc2_profile {
+    width: 36px;
+    height: 36px;
+    background-color: brown;
+    border-radius: 50%;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.hmbc2_settings {
+    width: 30px;
+    height: 30px;
+    background-image: url("../../img/settings-outline.svg");
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.hmbc2_settings:hover {
+    background-size: 32px;
+}

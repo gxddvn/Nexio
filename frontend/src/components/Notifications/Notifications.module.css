@@ -1,0 +1,220 @@
+.n_main {
+    background-color: #eaeaea;
+    padding: 70px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.n_head {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    background-color: whitesmoke;
+    padding: 10px;
+    box-shadow: 0 2px 1px  rgba(0, 0, 0, .1);
+    z-index: 3;
+}
+
+.nh_cont {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nhc_span {
+    font-family: Salsa;
+    font-size: 30px;
+    color: black;
+}
+
+.nm_buttlist {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    background-color: whitesmoke;
+    padding: 10px;
+    box-shadow: 0 2px 1px  rgba(0, 0, 0, .1);
+    z-index: 3;
+}
+
+.nmb_cont {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 500px;
+}
+
+.nmb_nav {
+    font-family: Salsa;
+    font-size: 30px;
+    color: black;
+}
+
+.nmb_home {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/home-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.nmb_home:hover {
+    background-size: 32px;
+}
+
+.nmb_search {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/search-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.nmb_search:hover {
+    background-size: 32px;
+}
+
+.nmb_newpost {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/add-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.nmb_newpost:hover {
+    background-size: 32px;
+}
+
+.nmb_notification {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/notifications-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.nmb_notification:hover {
+    background-size: 32px;
+}
+
+.nmb_direct {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/mail-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.nmb_direct:hover {
+    background-size: 32px;
+}
+
+.nm_block {
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nmb_notif {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.nmb_notif:hover {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.nmbn_cont {
+    display: flex;
+    align-items: center;
+}
+
+.nmbn_avatar {
+    width: 40px;
+    height: 40px;
+    background-color: blueviolet;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.nmbn_span {
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+}
+
+.nmbn_span1 {
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+}
+
+.nmbn_span2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, .5);
+}
+
+.nmbn_button {
+    font-size: 18px;
+    font-weight: 500;
+    color: whitesmoke;
+    background-color: #03a9f4;
+    border: 0;
+    border-radius: 15px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.nmbn_button:hover {
+    background-color: #0294d8;
+}
+
+.nmbn_img {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+}

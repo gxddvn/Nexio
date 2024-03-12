@@ -1,0 +1,195 @@
+.s_main {
+    background-color: #eaeaea;
+    padding: 50px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.s_head {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    background-color: whitesmoke;
+    padding: 10px;
+    box-shadow: 0 2px 1px  rgba(0, 0, 0, .1);
+    z-index: 3;
+}
+
+.sh_cont {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shc_search {
+    width: 28px;
+    height: 28px;
+    background-image: url('../../img/search-outline.svg');
+    background-size: 28px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.shc_input {
+    width: 100%;
+    max-width: 500px;
+    border: 2px solid rgba(0, 0, 0, .2);
+    border-radius: 15px;
+    font-family: Rubik;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(29, 29, 29);
+    padding: 5px 10px;
+}
+
+.sm_buttlist {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    background-color: whitesmoke;
+    padding: 10px;
+    box-shadow: 0 2px 1px  rgba(0, 0, 0, .1);
+    z-index: 3;
+}
+
+.smb_cont {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 500px;
+}
+
+.smb_nav {
+    font-family: Salsa;
+    font-size: 30px;
+    color: black;
+}
+
+.smb_home {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/home-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.smb_home:hover {
+    background-size: 32px;
+}
+
+.smb_search {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/search-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.smb_search:hover {
+    background-size: 32px;
+}
+
+.smb_newpost {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/add-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.smb_newpost:hover {
+    background-size: 32px;
+}
+
+.smb_notification {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/notifications-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.smb_notification:hover {
+    background-size: 32px;
+}
+
+.smb_direct {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/mail-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.smb_direct:hover {
+    background-size: 32px;
+}
+
+.sm_recomendation {
+    position: relative;
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2px;
+}
+
+.smr_publication {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+    /* cursor: pointer; */
+}
+
+.smrp_nav {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 1;
+    transition: all .1s linear;
+}
+
+.smrp_nav:hover {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.smrp_img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

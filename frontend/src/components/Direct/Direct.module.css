@@ -1,0 +1,88 @@
+.d_main {
+    background-color: #eaeaea;
+    padding: 50px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dm_head {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    background-color: whitesmoke;
+    padding: 10px;
+    box-shadow: 0 2px 1px  rgba(0, 0, 0, .1);
+    z-index: 3;
+}
+
+.dmh_cont {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* max-width: 500px; */
+}
+
+.dmhc_back {
+    width: 30px;
+    height: 30px;
+    background-image: url("../../img/arrow-back-outline.svg");
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.dmhc_back:hover {
+    background-size: 32px;
+}
+
+.dmhc_nav {
+    font-family: Salsa;
+    font-size: 30px;
+    color: black;
+}
+
+.dmhc_block {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dmhc_archive {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    background-image: url("../../img/archive-outline.svg");
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.dmhc_archive:hover {
+    background-size: 32px;
+}
+
+.dmhc_settings {
+    width: 30px;
+    height: 30px;
+    background-image: url("../../img/settings-outline.svg");
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.dmhc_settings:hover {
+    background-size: 32px;
+}

@@ -1,0 +1,198 @@
+.c_main {
+    background-color: #eaeaea;
+    padding: 70px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.c_head {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    background-color: whitesmoke;
+    padding: 10px;
+    box-shadow: 0 2px 1px  rgba(0, 0, 0, .1);
+    z-index: 3;
+}
+
+.ch_cont {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chc_span {
+    font-family: Salsa;
+    font-size: 30px;
+    color: black;
+}
+
+.cm_buttlist {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    background-color: whitesmoke;
+    padding: 10px;
+    box-shadow: 0 2px 1px  rgba(0, 0, 0, .1);
+    z-index: 3;
+}
+
+.cmb_cont {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 500px;
+}
+
+.cmb_nav {
+    font-family: Salsa;
+    font-size: 30px;
+    color: black;
+}
+
+.cmb_home {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/home-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.cmb_home:hover {
+    background-size: 32px;
+}
+
+.cmb_search {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/search-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.cmb_search:hover {
+    background-size: 32px;
+}
+
+.cmb_newpost {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/add-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.cmb_newpost:hover {
+    background-size: 32px;
+}
+
+.cmb_notification {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/notifications-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.cmb_notification:hover {
+    background-size: 32px;
+}
+
+.cmb_direct {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/mail-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.cmb_direct:hover {
+    background-size: 32px;
+}
+
+.cm_block {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    padding: 50px;
+}
+
+.cmb_cont1 {
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* cursor: pointer; */
+}
+
+.cmb_newpost2 {
+    width: 100px;
+    height: 100px;
+    background-image: url('../../img/add-outline.svg');
+    background-size: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 4px solid black;
+    border-radius: 15px;
+    padding: 8px;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.cmb_p {
+    font-family: Rubik;
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+    margin: 25px 0 0 0;
+}
+
+.cmb_editoptions {
+    width: 100%;
+    margin: 25px 0 0 0;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.cmbc1_input {
+    display: none;    
+}
+
+.cmb_img {
+    max-width: 400px;
+}
+

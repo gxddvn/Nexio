@@ -1,0 +1,392 @@
+.p_main {
+    background-color: #eaeaea;
+    padding:0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.pm_buttlist {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    background-color: whitesmoke;
+    padding: 10px;
+    box-shadow: 0 2px 1px  rgba(0, 0, 0, .1);
+    z-index: 3;
+}
+
+.pmb_cont {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 500px;
+}
+
+.pmb_nav {
+    font-family: Salsa;
+    font-size: 30px;
+    color: black;
+}
+
+.pmb_home {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/home-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.pmb_home:hover {
+    background-size: 32px;
+}
+
+.pmb_search {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/search-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.pmb_search:hover {
+    background-size: 32px;
+}
+
+.pmb_newpost {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/add-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.pmb_newpost:hover {
+    background-size: 32px;
+}
+
+.pmb_notification {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/notifications-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.pmb_notification:hover {
+    background-size: 32px;
+}
+
+.pmb_direct {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/mail-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.pmb_direct:hover {
+    background-size: 32px;
+}
+
+.pm_head {
+    width: 100%;
+    padding: 25px;
+    background-color: whitesmoke;
+}
+
+.pmh_cont {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pmhc_left {
+    padding: 20px 50px;
+}
+
+.pmhcl_avatar {
+    width: 150px;
+    height: 150px;
+    background-color: brown;
+    border: 2px solid rgba(0, 0, 0, .1);
+    border-radius: 50%;
+}
+
+.pmhc_right {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.pmhcr_top {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.pmhcrt_name {
+    font-size: 30px;
+    font-weight: 600;
+    color: black;
+    margin-right: 30px;
+}
+
+.pmhcrt_butt {
+    font-size: 16px;
+    font-weight: 600;
+    color: whitesmoke;
+    border: 0;
+    border-radius: 15px;
+    padding: 5px 15px;
+    margin: 0 5px;
+    background-color: #03a9f4;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.pmhcrt_butt:hover {
+    background-color: #0095db;
+}
+
+.pmhcrt_settings {
+    width: 30px;
+    height: 30px;
+    background-image: url("../../img/settings-outline.svg");
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.pmhcrt_settings:hover {
+    background-size: 32px;
+}
+
+.pmhcr_middle {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.pmhcrm_span {
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.pmhcr_bottom {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.pmhcrb_span {
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.pmhcrb_span1 {
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.pmhcrb_spansite {
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.pmh_stories {
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+}
+
+.pmhs_cont {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.pmhs_addstorie {
+    width: 50px;
+    height: 50px;
+    background-image: url('../../img/add-outline.svg');
+    background-size: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.pmhs_addstorie:hover {
+    background-size: 52px;
+}
+
+.pmhs_storie {
+    width: 50px;
+    height: 50px;
+    background-color: chocolate;
+    border: 2px solid rgba(0, 0, 0, .1);
+    border-radius: 50%;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.pmhs_name {
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+}
+
+.pm_catalog {
+    width: 100%;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid rgba(0, 0, 0, .1);
+    /* border-radius: 15px; */
+}
+
+.pmc_cont {
+    display: flex;
+    align-items: center;
+    /* padding: 10px; */
+}
+
+.pmcc_block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin: 0 10px; */
+    padding: 10px;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.pmcc_block:hover {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.pmccb_mediaimg {
+    width: 22px;
+    height: 22px;
+    background-image: url('../../img/grid-outline.svg');
+    background-size: 22px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 5px;
+}
+
+.pmccb_repimg {
+    width: 22px;
+    height: 22px;
+    background-image: url('../../img/arrow-redo-outline.svg');
+    background-size: 22px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 5px;
+}
+
+.pmccb_savesimg {
+    width: 22px;
+    height: 22px;
+    background-image: url('../../img/bookmark-outline.svg');
+    background-size: 22px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 5px;
+}
+
+.pmccb_span {
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+}
+
+.pm_publications {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.pmp_cont {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2px;
+}
+
+.pmpc_publication {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.pmpcp_nav {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 1;
+    transition: all .1s linear;
+}
+
+.pmpcp_nav:hover {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.pmpcp_img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

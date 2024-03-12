@@ -1,0 +1,170 @@
+.h_block {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hb_inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+    background-color: whitesmoke;
+}
+
+.hbi_cont {
+    padding: 0 20px;
+}
+
+.hbil_border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border: 2px solid rgba(0, 0, 0, .0);
+    transition: all .1s linear;
+}
+
+.hbils_icon {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/menu-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.hbils_icon:hover {
+    background-size: 35px;
+}
+
+.hbicl_nav {
+    font-family: Salsa;
+    font-size: 40px;
+    color: black;
+}
+
+.hbird_icon {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/mail-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.hbird_icon:hover {
+    background-size: 34px;
+}
+
+.hb_innercont {
+    width: 200px;
+    height: 200px;
+    border-radius: 0 0 100px 100px;
+    position: absolute;
+    top: -200px;
+    left: 0px;
+    transition: top 0.5s ease-in-out;
+    background-color: whitesmoke;
+    z-index: 1;
+}
+
+.hb_innercont::before {
+    content: '';
+    position: absolute;
+    top: 109px;
+    left: -85px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: 60px -60px whitesmoke;
+}
+
+.hb_innercont::after {
+    content: '';
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 109px;
+    left: 187px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: -60px -60px whitesmoke;
+}
+
+.hb_innercont_active {
+    top: -50px;
+}
+
+.hbi_block {
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.hbi_profile {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 125px;
+    left: 30px;
+    background-image: url('../../img/person-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+    z-index: 3;
+}
+
+.hbi_profile:hover {
+    background-size: 34px;
+}
+
+.hbi_settings {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 155px;
+    left: 85px;
+    background-image: url('../../img/settings-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+    z-index: 3;
+}
+
+.hbi_settings:hover {
+    background-size: 34px;
+}
+
+.hbi_logout {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 125px;
+    left: 145px;
+    background-image: url('../../img/log-out-outline.svg');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+    z-index: 3;
+}
+
+.hbi_logout:hover {
+    background-size: 34px;
+}
