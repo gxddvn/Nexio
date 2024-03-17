@@ -5,8 +5,12 @@ import models from './models/models.js';
 import cors from 'cors';
 import router from './routes/index.js';
 import errorHandler from './middleware/ErrorHadnlingMiddleware.js';
+import AWS from 'aws-sdk';
 
 const app = express();
+
+// const s3 = AWS.S3();
+// const bucket_name = process.end.BUCKET_NAME;
 
 dotenv.config();
 

@@ -19,6 +19,7 @@ const PublicationsTable = sequelize.define( 'publications_table', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     // id_profile: int,
     img: {type: DataTypes.STRING, allowNull: false},
+    caption: {type: DataTypes.STRING, defaultValue: ""},
     num_likes: {type: DataTypes.INTEGER, defaultValue: 0},
     num_comments: {type: DataTypes.INTEGER, defaultValue: 0},
     num_reposts: {type: DataTypes.INTEGER, defaultValue: 0},

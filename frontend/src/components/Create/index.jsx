@@ -1,30 +1,21 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import styles from "./Create.module.css";
-import { NavLink } from 'react-router-dom';
-import Caman from 'caman';
+import { NavLink, Navigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { useSelector } from 'react-redux';
+import { selectIsAuth } from '../../Redux/Slices/auth';
 
 
 const Create = () => {
-    const [selectedFile, setSelectedFile] = useState();
     const [imageUrl, setImageUrl] = useState();
-    const canvasRef = useRef();
-
-    React.useEffect(() => {
-        if (imageUrl) {
-            const canvas = canvasRef.current;
-            const ctx = canvas.getContext('2d');
-            
-            const image = new Image();
-            image.src = imageUrl;
-            image.onload = () => {
-                canvas.width = image.width;
-                canvas.height = image.height;
-                ctx.drawImage(image, 0, 0);
-            };
-        }
-    }, [imageUrl]);
+    const [isSend, setIsSend] = useState(false);
+    const [post, setPost] = useState({});
+    const isAuth = useSelector(selectIsAuth);
+    const user = useSelector((state) => state.auth.user || []);
 
     const handleFileChange = (event) => {
+        console.log("tut");
+        console.log(imageUrl);
         const file = event.target.files[0];
         const reader = new FileReader();
         reader.onload = () => {
@@ -33,13 +24,43 @@ const Create = () => {
         reader.readAsDataURL(file);
     };
 
-    // const applyFilter = (filter) => {
-    //     Caman(canvasRef.current, function () {
-    //       this.revert(); // Сброс всех предыдущих изменений
-    //       this[filter]().render(); // Применение выбранного фильтра
-    //     });
-    // };
-    // console.log(selectedFile);
+    const {
+        register, 
+        handleSubmit, 
+        formState: { errors, isValid },
+        reset
+    } = useForm({ 
+        defaultValues: {
+            input_media : {},
+            caption: "",
+            user_id: user.id,
+        }, 
+        mode: "onBlur",
+    });
+
+    const onSubmit = async (values) => {
+        console.log(values);
+        console.log(user);
+        setIsSend(true);
+        setPost(values);
+        setImageUrl();
+        reset();
+    };
+
+    React.useEffect(() => {
+        console.log("notuta");
+        if(isSend && isAuth && post) {
+            console.log("tuta");
+            console.log(post);
+            setIsSend(false);
+        }
+    }, [isSend, isAuth, post])
+
+    if (!isAuth) {
+        return <Navigate to='/' />;
+    }
+
+
     return (
         <div className={styles.c_main}>
             <div className={styles.c_head}>
@@ -56,18 +77,23 @@ const Create = () => {
                     <NavLink to='/direct' className={styles.cmb_direct}></NavLink>
                 </div>
             </div>
-            <div className={styles.cm_block}>
-                    {imageUrl ? (
-                        <img src={imageUrl} alt="" className={styles.cmb_img}/>
-                    ) : (
-                        <div className={styles.cmb_cont1}>
-                            <label htmlFor="input_file" className={styles.cmb_newpost2}></label>
-                            <input type="file" id="input_file" name="file" accept="image/*, video/*" onChange={handleFileChange} className={styles.cmbc1_input} />
-                            <p className={styles.cmb_p}>Add to new post photo or video...</p>
-                        </div>
-                    )}
-                <div className={styles.cmb_editoptions}></div>
-            </div>
+            <form onSubmit={handleSubmit(onSubmit)} className={styles.cm_block}>
+                {imageUrl ? (
+                    <img src={imageUrl} alt="" className={styles.cmb_img}/>
+                ) : (
+                    <div className={styles.cmb_cont1}>
+                        <label htmlFor="input_file" className={styles.cmb_newpost2}></label>
+                        <input type="file" id="input_file" name="file" accept="image/*, video/*"  className={styles.cmbc1_input} {...register("input_media", {onChange: handleFileChange})} />
+                        <div className={styles.cmb_errorblock}>{errors?.input_media && <p className={styles.cmb_errors}>{errors?.input_media?.message || "Error!"}</p>}</div>
+                        <p className={styles.cmb_p}>Add to new post photo or video...</p>
+                    </div>
+                )}
+                <div className={styles.cmb_editoptions}>
+                    <span className={styles.cmbe_span}>Caption: </span>
+                    <input type="text" className={styles.cmbe_input} {...register("caption")}/>
+                </div>
+                <button type="submit" disabled={!isValid} className={styles.cmb_button}>Submit</button>
+            </form>
         </div>
     )
 }
