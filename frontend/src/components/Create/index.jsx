@@ -4,18 +4,17 @@ import { NavLink, Navigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useSelector } from 'react-redux';
 import { selectIsAuth } from '../../Redux/Slices/auth';
+import axios from '../../axios.js';
 
 
 const Create = () => {
     const [imageUrl, setImageUrl] = useState();
-    const [isSend, setIsSend] = useState(false);
     const [post, setPost] = useState({});
     const isAuth = useSelector(selectIsAuth);
     const user = useSelector((state) => state.auth.user || []);
 
+    
     const handleFileChange = (event) => {
-        console.log("tut");
-        console.log(imageUrl);
         const file = event.target.files[0];
         const reader = new FileReader();
         reader.onload = () => {
@@ -41,7 +40,6 @@ const Create = () => {
     const onSubmit = async (values) => {
         console.log(values);
         console.log(user);
-        setIsSend(true);
         setPost(values);
         setImageUrl();
         reset();
@@ -49,17 +47,25 @@ const Create = () => {
 
     React.useEffect(() => {
         console.log("notuta");
-        if(isSend && isAuth && post) {
-            console.log("tuta");
-            console.log(post);
-            setIsSend(false);
+        if(isAuth && post.input_media) {
+            const formData = new FormData();
+            formData.append('file', post.input_media[0]);
+            formData.append('caption', post.caption);
+            formData.append('id_profile', post.user_id);
+            axios.post(`/publication/`, formData)
+            .then((res) => {
+                console.log(res.data);
+            })
+            .catch((err) => {
+                console.warn(err);
+                alert("Error!");
+            });
         }
-    }, [isSend, isAuth, post])
+    }, [isAuth, post])
 
     if (!isAuth) {
         return <Navigate to='/' />;
     }
-
 
     return (
         <div className={styles.c_main}>
@@ -77,13 +83,13 @@ const Create = () => {
                     <NavLink to='/direct' className={styles.cmb_direct}></NavLink>
                 </div>
             </div>
-            <form onSubmit={handleSubmit(onSubmit)} className={styles.cm_block}>
+            <form onSubmit={handleSubmit(onSubmit)} className={styles.cm_block} encType="multipart/form-data">
                 {imageUrl ? (
                     <img src={imageUrl} alt="" className={styles.cmb_img}/>
                 ) : (
                     <div className={styles.cmb_cont1}>
                         <label htmlFor="input_file" className={styles.cmb_newpost2}></label>
-                        <input type="file" id="input_file" name="file" accept="image/*, video/*"  className={styles.cmbc1_input} {...register("input_media", {onChange: handleFileChange})} />
+                        <input type="file" id="input_file" name="file" accept="image/*, video/*"  className={styles.cmbc1_input} {...register("input_media", {onChange: handleFileChange, required: "Select file!"})} />
                         <div className={styles.cmb_errorblock}>{errors?.input_media && <p className={styles.cmb_errors}>{errors?.input_media?.message || "Error!"}</p>}</div>
                         <p className={styles.cmb_p}>Add to new post photo or video...</p>
                     </div>
