@@ -5,7 +5,7 @@ import models from './models/models.js';
 import cors from 'cors';
 import router from './routes/index.js';
 import errorHandler from './middleware/ErrorHadnlingMiddleware.js';
-import AWS from 'aws-sdk';
+// import AWS from 'aws-sdk';
 
 const app = express();
 

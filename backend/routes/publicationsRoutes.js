@@ -7,5 +7,6 @@ const upload = multer({ dest: 'uploads/' });
 router.post('/', upload.any(), publicationsController.create)
 router.get('/', publicationsController.getAll)
 router.get('/:id', publicationsController.getOne)
+router.post('/test', publicationsController.getTest)
 
 export default router;
