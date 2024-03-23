@@ -25,6 +25,12 @@ const PublicationsTable = sequelize.define( 'publications_table', {
     num_reposts: {type: DataTypes.INTEGER, defaultValue: 0},
 });
 
+const LikesPublicationsTable = sequelize.define( 'likes_publications_table', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    // id_publication: int,
+    // id_profile: int,
+});
+
 const CommentsTable = sequelize.define( 'comments_table', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     // id_publication: int,
@@ -121,6 +127,14 @@ CommentsTable.belongsTo(PublicationsTable);
 
 /////////////////////////#
 
+ProfilesTable.hasMany(LikesPublicationsTable);
+LikesPublicationsTable.belongsTo(ProfilesTable);
+
+PublicationsTable.hasMany(LikesPublicationsTable);
+LikesPublicationsTable.belongsTo(PublicationsTable);
+
+/////////////////////////#
+
 ProfilesTable.hasMany(RepostsTable);
 RepostsTable.belongsTo(ProfilesTable);
 
@@ -199,6 +213,7 @@ MessagesTable.belongsTo(MessageTypesTable);
 export default {
     ProfilesTable,
     PublicationsTable,
+    LikesPublicationsTable,
     CommentsTable,
     RepostsTable,
     SavePublicationsTable,

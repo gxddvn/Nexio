@@ -10,10 +10,10 @@ import axios from '../../axios.js';
 const Create = () => {
     const [imageUrl, setImageUrl] = useState();
     const [post, setPost] = useState({});
+    const [isEnd, setIsEnd] = useState(false);
     const isAuth = useSelector(selectIsAuth);
     const user = useSelector((state) => state.auth.user || []);
 
-    
     const handleFileChange = (event) => {
         const file = event.target.files[0];
         const reader = new FileReader();
@@ -38,15 +38,12 @@ const Create = () => {
     });
 
     const onSubmit = async (values) => {
-        console.log(values);
-        console.log(user);
         setPost(values);
         setImageUrl();
         reset();
     };
 
     React.useEffect(() => {
-        console.log("notuta");
         if(isAuth && post.input_media) {
             const formData = new FormData();
             formData.append('file', post.input_media[0]);
@@ -55,6 +52,7 @@ const Create = () => {
             axios.post(`/publication/`, formData)
             .then((res) => {
                 console.log(res.data);
+                setIsEnd(true);
             })
             .catch((err) => {
                 console.warn(err);
@@ -63,7 +61,7 @@ const Create = () => {
         }
     }, [isAuth, post])
 
-    if (!isAuth) {
+    if (!isAuth || isEnd) {
         return <Navigate to='/' />;
     }
 

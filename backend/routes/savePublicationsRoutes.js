@@ -4,6 +4,7 @@ const router = new Router();
 
 router.post('/', savePublicationsController.create)
 router.get('/', savePublicationsController.getAll)
+router.get('/profilesall/:id', savePublicationsController.getProfilesAllSaves)
 router.get('/:id', savePublicationsController.getOne)
 
 export default router;

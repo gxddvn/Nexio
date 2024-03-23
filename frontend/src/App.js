@@ -30,7 +30,7 @@ function App() {
         <Route path='direct/chat/:id' element={<Chat />}></Route>
         <Route path="search" element={<Search />}></Route>
         <Route path="notifications" element={<Notifications />}></Route>
-        <Route path="profile" element={<Profile />}></Route>
+        <Route path="profile/:id" element={<Profile />}></Route>
         <Route path="auth">
           <Route path="login" element={<Login />}></Route>
           <Route path="reg" element={<Reg />}></Route>

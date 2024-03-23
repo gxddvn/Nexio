@@ -53,7 +53,7 @@ class ProfilesController {
         const user = await ProfilesTable.findOne(
             {where: {id}}
         )
-        return res.json(user);
+        return res.json({id: user.id, login: user.login, p_num: user.p_num, email: user.email, name: user.name, user_role: user.user_role, num_publications: user.num_publications, num_subscribers: user.num_subscribers, num_subscriptions: user.num_subscriptions, img_avatar: user.img_avatar});
     }
 
     async getAll(req, res) {

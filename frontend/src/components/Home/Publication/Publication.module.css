@@ -142,6 +142,22 @@
     background-size: 35px;
 }
 
+.hmpbb_likes_active {
+    width: 32px;
+    height: 32px;
+    margin: 0 5px;
+    background-image: url("../../../img/heart.svg");
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.hmpbb_likes_active:hover {
+    background-size: 35px;
+}
+
 .hmpbb_comments {
     width: 32px;
     height: 32px;
@@ -171,6 +187,24 @@
 }
 
 .hmpbb_repost:hover {
+    background-image: url("../../../img/arrow-redo.svg");
+    background-size: 35px;
+}
+
+.hmpbb_repost_active {
+    width: 32px;
+    height: 32px;
+    margin: 0 5px;
+    background-image: url("../../../img/arrow-redo.svg");
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.hmpbb_repost_active:hover {
+    /* background-image: url("../../../img/arrow-redo-outline.svg"); */
     background-size: 35px;
 }
 
@@ -188,5 +222,22 @@
 
 .hmpbb_save:hover {
     background-image: url("../../../img/bookmark.svg");
+    background-size: 35px;
+}
+
+.hmpbb_save_active {
+    width: 32px;
+    height: 32px;
+    margin: 0 5px;
+    background-image: url("../../../img/bookmark.svg");
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.hmpbb_save_active:hover {
+    /* background-image: url("../../../img/bookmark-outline.svg"); */
     background-size: 35px;
 }

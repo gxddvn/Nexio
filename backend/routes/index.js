@@ -15,10 +15,12 @@ import chatRoomsRoutes from './chatRoomsRoutes.js';
 import roomParticipantsRoutes from './roomParticipantsRoutes.js';
 import messageTypesRoutes from './messageTypesRoutes.js';
 import messagesRoutes from './messagesRoutes.js';
+import likesPublicationsRoutes from './likesPublicationsRoutes.js';
 
 router.use('/profiles', profilesRoutes)
 router.use('/publication', publicationsRoutes)
 router.use('/comments', commentRoutes)
+router.use('/likespublications', likesPublicationsRoutes)
 router.use('/reposts', repostsRoutes)
 router.use('/savepublications', savePublicationsRoutes)
 router.use('/typenotif', typeNotificationsRoutes)

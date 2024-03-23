@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, createSelector } from "@reduxjs/toolkit";
 import axios from "../../axios";
 import { jwtDecode } from "jwt-decode";
 
@@ -80,5 +80,13 @@ export const selectIsAuth = (state) => Boolean(state.auth.user);
 export const authMe = (state) => state.auth.user;
 
 export const authReducer = authSlice.reducer;
+
+export const selectAuthData = createSelector(
+    [selectIsAuth, authMe],
+    (IsAuth, userMe) => ({
+        IsAuth,
+        userMe,
+    })
+);
 
 export const { logout } = authSlice.actions;

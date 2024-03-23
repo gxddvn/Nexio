@@ -8,6 +8,7 @@ const s3 = new AWS.S3({
 
 async function uploadFileToS3(fileContent, bucketName) {
     const file = fs.readFileSync(fileContent.path);
+    console.log(fileContent);
     const fileName = `${Date.now()}_${fileContent.filename}`;
     const params = {
         Bucket: bucketName,
@@ -18,6 +19,13 @@ async function uploadFileToS3(fileContent, bucketName) {
     try {
         const data = await s3.upload(params).promise();
         console.log('File uploaded successfully:', data.Location);
+        fs.unlink(fileContent.path, (err) => {
+            if (err) {
+                console.error('Error deleting file:', err);
+            } else {
+                console.log('File from folder deleted successfully');
+            }
+        });
         return data.Key;
     } catch (error) {
         console.error('Error uploading file:', error);

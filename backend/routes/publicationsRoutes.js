@@ -6,7 +6,11 @@ const upload = multer({ dest: 'uploads/' });
 
 router.post('/', upload.any(), publicationsController.create)
 router.get('/', publicationsController.getAll)
+router.get('/profilesall/:id', publicationsController.getProfilesAllPublication)
 router.get('/:id', publicationsController.getOne)
-router.post('/test', publicationsController.getTest)
+// router.post('/test', publicationsController.getTest)
+router.delete('/del/:id', publicationsController.deletePublication)
+router.put('/update/likes', publicationsController.updateLikesPublication)
+router.get('/checkactions/:id_publication/:id_profile', publicationsController.checkActions)
 
 export default router;

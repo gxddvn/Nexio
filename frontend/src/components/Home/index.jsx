@@ -1,12 +1,32 @@
-import React, { useEffect } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./Home.module.css";
 import { NavLink } from "react-router-dom";
 import Publication from "./Publication";
+import axios from '../../axios.js';
 
 const Home = () => {
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
+    const [publications, setPublications] = useState([]);
+    const bottom = useRef(null);
+    const page = useRef(1);
+
+    React.useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                console.log("Loading...");
+                axios.get(`/publication?page=${page.current}&limit=5`)
+                .then((res) => {
+                    setPublications(prevPublications => prevPublications.concat(res.data.rows));
+                })
+                .catch((err) => {
+                    console.warn(err);
+                    alert("Error!");
+                });
+                page.current = page.current + 1;
+            }
+        });
+        observer.observe(bottom.current);
+    }, []);
+
     return(
         <main className={styles.h_main}>
             <div className={styles.hm_buttlist2}>
@@ -51,10 +71,11 @@ const Home = () => {
                     <span className={styles.hms_span}>gxddvn</span>
                 </div>
             </div>
-            <Publication />
-            <Publication />
-            <Publication />
-            <Publication />
+            {publications.map((publication, index) => (
+                <Publication key={index} publication={publication}/>
+            ))}
+            <div ref={bottom}/>
+            {/* <button onClick={()=>{setLimit(limit+5)}}>clac</button> */}
         </main>
     );
 };

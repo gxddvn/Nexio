@@ -5,20 +5,25 @@ import models from './models/models.js';
 import cors from 'cors';
 import router from './routes/index.js';
 import errorHandler from './middleware/ErrorHadnlingMiddleware.js';
-// import AWS from 'aws-sdk';
+import rateLimit from "express-rate-limit";
 
 const app = express();
 
-// const s3 = AWS.S3();
-// const bucket_name = process.end.BUCKET_NAME;
-
 dotenv.config();
+
+const limiter = rateLimit({
+    windowMs: 60 * 1000, // 1 хвилина
+    max: 5, // Максимальна кількість запитів в цей період
+    message: 'Too many requests from this IP, please try again later.'
+});
+
 
 app.use(express.json());
 app.use(cors());
 app.use('/api', router);
 app.use(express.static('fonts'));
 app.use(errorHandler);
+app.use(limiter);
 
 // app.get('/', (req, res) => {
 //     res.status(200).json({message: "OK"});
