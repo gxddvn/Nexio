@@ -1,14 +1,14 @@
-import React from 'react';
 import styles from "./Reg.module.css";
 import { useForm } from 'react-hook-form';
 import { NavLink, Navigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { fetchRegister, selectIsAuth } from '../../../Redux/Slices/auth';
+import { ObjDataReg, fetchRegister, selectIsAuth } from '../../../Redux/Slices/auth';
 import { useSelector } from 'react-redux';
+import { AppDispatch, RootState } from "../../../Redux/store";
 
 const Reg = () => {
-    const isAuth = useSelector(selectIsAuth);
-    const dispatch = useDispatch();
+    const isAuth = useSelector<RootState>(selectIsAuth);
+    const dispatch = useDispatch<AppDispatch>();
     const {
         register, 
         handleSubmit, 
@@ -26,16 +26,10 @@ const Reg = () => {
         mode: "onBlur",
     });
 
-    const onSubmit = async (values) => {
-        console.log(values);
+    const onSubmit = async (values:ObjDataReg) => {
         const data = await dispatch(fetchRegister(values));
-        console.log(data.error);
         if (!data.payload) {
             alert("Не вдалось зареєструватися, не правильно введені дані або такий користувач вже існує!");
-        } else if (data.payload) {
-            if ("token" in data.payload) {
-                window.localStorage.setItem("token", data.payload.token);
-            }
         }
         reset();
     };

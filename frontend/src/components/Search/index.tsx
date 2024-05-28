@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import styles from "./Search.module.css";
 import { NavLink } from 'react-router-dom';
 

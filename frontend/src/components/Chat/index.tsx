@@ -3,11 +3,12 @@ import styles from "./Chat.module.css";
 import { NavLink } from "react-router-dom";
 
 const Chat = () => {
-    // const { id } = useParams();
-    const chatContainerRef = useRef(null);
+    const chatContainerRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
         const chatContainer = chatContainerRef.current;
-        chatContainer.scrollTop = chatContainer.scrollHeight;
+        if (chatContainer) {
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
     }, []);
 
     return (

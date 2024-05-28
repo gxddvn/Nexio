@@ -161,10 +161,35 @@
 .hmbc2_profile {
     width: 36px;
     height: 36px;
-    background-color: brown;
-    border-radius: 50%;
-    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+}
+
+.hmbc2_profile_logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, .5);
+}
+
+.hmbc2_login {
+    width: 36px;
+    height: 36px;
+    background-image: url("../../img/log-in-outline.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .1s ease;
+}
+
+.hmbc2_login:hover {
+    background-size: 36px;
 }
 
 .hmbc2_settings {

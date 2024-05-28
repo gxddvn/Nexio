@@ -6,6 +6,7 @@ import jwt from "jsonwebtoken";
 const ProfilesTable = models.ProfilesTable;
 
 const generateJWT = (id, login, p_num, email, name, user_role, num_publications, num_subscribers, num_subscriptions, img_avatar) => {
+    // console.log(id, login, p_num, email, name, user_role, num_publications, num_subscribers, num_subscriptions, img_avatar)
     return jwt.sign({id, login, p_num, email, name, user_role, num_publications, num_subscribers, num_subscriptions, img_avatar}, process.env.SECRET_KEY, {expiresIn: '24h'})
 }
 
@@ -21,7 +22,7 @@ class ProfilesController {
         }
         const HashPassword = await bcrypt.hash(password, 5);
         const user = await ProfilesTable.create({login, p_num, email, password: HashPassword, name});
-        const token = generateJWT(user.id, user.login, user.p_num, user.email, user.name);
+        const token = generateJWT(user.id, user.login, user.p_num, user.email, user.name, user.user_role, user.num_publications, user.num_subscribers, user.num_subscriptions, user.img_avatar);
         return res.json({token});
     }
 
@@ -45,6 +46,7 @@ class ProfilesController {
     async checkAuth(req, res, next) {
         // res.json({message: "All working!!!"});
         const token = generateJWT(req.user.id, req.user.login, req.user.p_num, req.user.email, req.user.name, req.user.user_role, req.user.num_publications, req.user.num_subscribers, req.user.num_subscriptions, req.user.img_avatar);
+        // console.log(token)
         return res.json({token})
     }
 
@@ -53,7 +55,20 @@ class ProfilesController {
         const user = await ProfilesTable.findOne(
             {where: {id}}
         )
-        return res.json({id: user.id, login: user.login, p_num: user.p_num, email: user.email, name: user.name, user_role: user.user_role, num_publications: user.num_publications, num_subscribers: user.num_subscribers, num_subscriptions: user.num_subscriptions, img_avatar: user.img_avatar});
+        const user_tab = {
+            id: user.id, 
+            login: user.login, 
+            p_num: user.p_num, 
+            email: user.email, 
+            name: user.name, 
+            user_role: user.user_role, 
+            num_publications: user.num_publications, 
+            num_subscribers: user.num_subscribers, 
+            num_subscriptions: user.num_subscriptions, 
+            img_avatar: user.img_avatar
+        }
+        // console.log(user_tab)
+        return res.json(user_tab);
     }
 
     async getAll(req, res) {

@@ -131,8 +131,8 @@
 .pmhcl_avatar {
     width: 150px;
     height: 150px;
-    background-color: brown;
-    border: 2px solid rgba(0, 0, 0, .1);
+    /* background-color: brown; */
+    border: 2px solid rgba(0, 0, 0, .3);
     border-radius: 50%;
 }
 
@@ -175,6 +175,7 @@
 .pmhcrt_settings {
     width: 30px;
     height: 30px;
+    border: none;
     background-image: url("../../img/settings-outline.svg");
     background-size: 30px;
     background-position: center;

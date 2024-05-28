@@ -2,12 +2,15 @@ import React, { useRef, useState } from "react";
 import styles from "./Home.module.css";
 import { NavLink } from "react-router-dom";
 import Publication from "./Publication";
-import axios from '../../axios.js';
+import axios from '../../axios';
+import { useSelector } from "react-redux";
+import { selectAuthData } from "../../Redux/Slices/auth";
 
 const Home = () => {
     const [publications, setPublications] = useState([]);
-    const bottom = useRef(null);
+    const bottom = useRef<HTMLDivElement>(null);
     const page = useRef(1);
+    const authData = useSelector(selectAuthData);
 
     React.useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -24,14 +27,24 @@ const Home = () => {
                 page.current = page.current + 1;
             }
         });
-        observer.observe(bottom.current);
+        observer.observe(bottom.current as HTMLDivElement);
     }, []);
+
+    console.log(authData);
 
     return(
         <main className={styles.h_main}>
             <div className={styles.hm_buttlist2}>
                 <div className={styles.hmb_cont}>
-                    <NavLink to='/profile' className={styles.hmbc2_profile}></NavLink>
+                    {!authData.IsAuth ? (
+                        <NavLink to='/auth/login/' className={styles.hmbc2_login}/>
+                    ) : (
+                        <NavLink to={`/profile/${!authData.user ? 0 : authData.user.id}`} className={styles.hmbc2_profile}>
+                            {authData.user && (
+                                <img src={authData.user.img_avatar} alt="" className={styles.hmbc2_profile_logo} />
+                            )}
+                        </NavLink>
+                    )}
                     <NavLink to='/' className={styles.hmb_nav}>Nexio</NavLink>
                     <div className={styles.hmbc2_settings}></div>
                 </div>

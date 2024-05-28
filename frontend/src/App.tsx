@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes  } from "react-router-dom";
 
 import Home from "./components/Home";
 import { Layout } from "./components/Layout";
@@ -13,9 +13,10 @@ import Reg from "./components/Auth/Reg";
 import { useDispatch } from "react-redux";
 import { fetchAuthMe } from "./Redux/Slices/auth";
 import Create from "./components/Create";
+import { AppDispatch } from "./Redux/store";
 
 function App() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   // const token = window.localStorage.getItem("token");
 
   React.useEffect(() => {

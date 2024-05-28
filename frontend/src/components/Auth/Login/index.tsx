@@ -1,14 +1,14 @@
-import React from 'react'
-import styles from "./Login.module.css";
+import styles from './Login.module.css';
 import { NavLink, Navigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { fetchAuth, selectIsAuth } from '../../../Redux/Slices/auth';
+import { ObjDataLogin, fetchAuth, selectIsAuth } from '../../../Redux/Slices/auth';
+import { AppDispatch, RootState } from '../../../Redux/store';
 
 const Login = () => {
-    const isAuth = useSelector(selectIsAuth);
-    const dispatch = useDispatch();
+    const isAuth = useSelector<RootState>(selectIsAuth);
+    const dispatch = useDispatch<any>();
     const {
         register, 
         handleSubmit, 
@@ -22,14 +22,12 @@ const Login = () => {
         mode: "onBlur",
     });
 
-    const onSubmit = async (values) => {
-        console.log(values);
+    const onSubmit = async (values: ObjDataLogin) => {
         reset();
         const data = await dispatch(fetchAuth(values));
         if (!data.payload) {
             alert("Не вдалось авторизуватися, не правильний пароль або пошта!");
         }
-        console.log(data.payload)
         // if ("token" in data.payload) {
         //     window.localStorage.setItem("token", data.payload.token);
         // }
